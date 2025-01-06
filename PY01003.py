@@ -1,62 +1,29 @@
-test = int(input())
-for z in range(0, test):
-    str_number = input()
-    lenth = len(str_number)
-    res = ""
-    if lenth == 1:
-        print(str_number)
-    else:
-        for i in range(lenth - 1, 0, -1):
-            k = int(str_number[i])
-            if(k < 5):
-                res += '0'
-            else:
-                res += '0'
-                j = i - 1
-                xau = ""
-                if str_number[j] == '0':
-                    xau = str_number[0: i-1] + \
-                        "1" + str_number[i+1: lenth]
+def LamTron(number):
+    number_list = list(number)
+    # lat nguoc chuoi
+    number_list = number_list[::-1]
+    #kiem tra
+    for i in range(len(number_list)-1):
+        if int(number_list[i]) >= 5: # kiem tra neu so hien tai >= 5
+            number_list[i+1] = str(int(number_list[i+1]) + 1) if (int(number_list[i+1]) != 9 or i+2 == len(number_list)) else number_list[i+1]
+        # bien so hien tai thanh so 0
+        number_list[i] = 0
+    # lat nguoc lai day
+    number_list = number_list[::-1]
 
-                if str_number[j] == '1':
-                    xau = str_number[0: i-1] + \
-                        "2" + str_number[i+1: lenth]
+    #in ra
+    for item in number_list:
+        print(item,end='')
+    print()
 
-                if str_number[j] == '2':
-                    xau = str_number[0: i-1] + \
-                        "3" + str_number[i+1: lenth]
 
-                if str_number[j] == '3':
-                    xau = str_number[0: i-1] + \
-                        "4" + str_number[i+1: lenth]
+if __name__ == '__main__':
+    t = int(input()) # nhap test case
+    while t > 0:
+        t-=1
+        number = input() # nhap so can kiem tra
+        LamTron(number)
+        
+    
 
-                if str_number[j] == '4':
-                    xau = str_number[0: i-1] + \
-                        "5" + str_number[i+1: lenth]
-
-                if str_number[j] == '5':
-                    xau = str_number[0: i-1] + \
-                        "6" + str_number[i+1: lenth]
-
-                if str_number[j] == '6':
-                    xau = str_number[0: i-1] + \
-                        "7" + str_number[i+1: lenth]
-
-                if str_number[j] == '7':
-                    xau = str_number[0: i-1] + \
-                        "8" + str_number[i+1: lenth]
-
-                if str_number[j] == '8':
-                    xau = str_number[0: i-1] + \
-                        "9" + str_number[i+1: lenth]
-                else:
-                    if str_number[j] == '9':
-                        xau = xau = str_number[0: i-1] + \
-                            "9" + str_number[i+1: lenth]
-                str_number = xau
-
-        if str_number[0] != '9':
-            res = str_number[0] + res
-        else:
-            res = "10" + res
-        print(res)
+    

@@ -1,0 +1,1 @@
+{"name":"Local: PY02007","url":"c:\\Users\\phant\\OneDrive\\MyComputer\\Folder\\SourceCode\\Python\\PY02007.py","tests":[{"id":1735654990133,"input":"42 84 252 420 840\n126 42 84 420 126","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\phant\\OneDrive\\MyComputer\\Folder\\SourceCode\\Python\\PY02007.py","group":"local","local":true}

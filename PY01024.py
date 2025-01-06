@@ -1,23 +1,16 @@
-import math
+def Check(number):
+    number_list = [int(digit) for digit in str(abs(number))]
+    # print(number_list)
+    if sum(number_list)%10 !=0: return False
 
+    for i in range(len(number_list)-1):
+        if abs(number_list[i] - number_list[i+1]) != 2: return False
+    return True
 
-def Check(n):
-    sum = int(n[0])
-    for i in range(1, len(n)):
-        if(abs(int(n[i]) - int(n[i-1]))) != 2:
-            return False
-        sum += int(n[i])
-    if(sum % 10 == 0):
-        return True
-    else:
-        return False
-
-
-test = int(input())
-while test > 0:
-    test -= 1
-    n = input()
-    if(Check(n)):
-        print("YES")
-    else:
-        print("NO")
+if __name__ == "__main__":
+    test = int(input())
+    while test > 0:
+        test -= 1
+        number = int(input())
+        if(Check(number) == True): print("YES")
+        else: print("NO")

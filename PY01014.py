@@ -1,15 +1,17 @@
-nameString = input().split()
-a = int(nameString[0])
-k = int(nameString[1])
-n = int(nameString[2])
 
-bFirst = k - (a % k)
-n -= a
-check = False
-while bFirst <= n:
-    print(bFirst, end=' ')
-    bFirst += k
-    check = True
+if __name__ == "__main__":
+    a,k,n = map(int, input().split())
+    b = -1 
+    if a >= n: print(b)
+    else :
+        b = (a//k + 1)*k - a
+        check  = 1
+        while b <= n-a:
+            print(b, end = ' ')
+            check = 0
+            b += k
+        if check == 1: print(-1)
+    
 
-if check == False:
-    print(-1)
+    
+        

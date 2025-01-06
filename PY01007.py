@@ -1,16 +1,14 @@
-import math
-test = int(input())
-while test > 0:
-    str_number = input()
-    Numbers = str_number.split()
+def TinhToanSoNam(tienGoc, laiMoiNam, MucTienCanDatDuoc):
+    soNam = 0
+    while tienGoc < MucTienCanDatDuoc:
+        tienGoc = tienGoc + tienGoc*laiMoiNam/100
+        soNam+=1
+    return soNam
+    
 
-    n = float(Numbers[0])
-    x = float(Numbers[1])
-    m = float(Numbers[2])
-
-    y = float(x/100)
-
-    resDouble = math.log(m/n, (y+1))
-    resInt = math.ceil(resDouble)
-    print(resInt)
-    test -= 1
+if __name__ == '__main__':
+    test = int(input())
+    while test > 0:
+        test -= 1
+        n,x,m = map(float, input().split())
+        print(TinhToanSoNam(n,x,m))

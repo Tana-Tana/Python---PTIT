@@ -1,14 +1,12 @@
-n = input()
-cnt1 = 0
-cnt2 = 0
-for i in range(0, len(n)):
-    if n[i] >= 'a' and n[i] <= 'z':
-        cnt1 += 1
-    else:
-        if n[i] >= 'A' and n[i] <= 'Z':
-            cnt2 += 1
+def Check(stringName):
+    chuHoa = 0
+    chuThuong = 0
+    for item in stringName:
+        if (item >= 'a') and (item <= 'z'): chuThuong += 1
+        if (item >= 'A') and (item <= 'Z'): chuHoa += 1
+    if chuThuong >= chuHoa: return stringName.lower()
+    return stringName.upper()
 
-if(cnt1 >= cnt2):
-    print(n.lower())
-else:
-    print(n.upper())
+if __name__ == '__main__':
+    stringName = input()
+    print(Check(stringName))

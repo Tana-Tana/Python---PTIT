@@ -1,15 +1,13 @@
-def Check(m):
-    for i in range(0, len(m)):
-        if m[i] != '4' and m[i] != '7':
-            return False
+def check(number):
+    while number != 0:
+        if(number%10 != 4) and (number%10!=7): return False
+        number//=10
     return True
 
-
-test = int(input())
-while test > 0:
-    n = input()
-    if Check(n) == True:
-        print("YES")
-    else:
-        print("NO")
-    test -= 1
+if __name__ == '__main__':
+    test = int(input())
+    while test > 0:
+        test -= 1
+        number = int(input())
+        if check(number) == True: print("YES")
+        else: print("NO")

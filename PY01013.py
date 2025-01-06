@@ -1,42 +1,23 @@
-import math
-
-
-def isPrime(n):
-    if n < 2:
-        return False
-    for i in range(2, int(math.sqrt(n)+1), 1):
-        if n % i == 0:
-            return False
+from math import *
+def isPrime(number):
+    if number < 2: return False
+    for i in range(2,isqrt(number)+1):
+        if(number % i == 0) : return False
     return True
 
-
-def isResult(m):
-    cnt = 0
-
-    while m > 0:
-        if isinstance(m, int) == True:
-            cnt += (m % 10)
-            m /= 10
-            m = math.floor(m)
-        else:
-            break
-
-    if(isPrime(cnt) == True):
-        return True
-    else:
-
-        return False
-
-
-test = int(input())
-while test > 0:
-    nameString = input().split()
-    a = int(nameString[0])
-    b = int(nameString[1])
-    c = math.gcd(a, b)
-
-    if isResult(c):
-        print("YES")
-    else:
-        print("NO")
-    test -= 1
+if __name__ == "__main__":
+    test = int(input())
+    while test > 0:
+        test -=1
+        a,b = map(int, input().split())
+        res = gcd(a,b)
+        # print(res)
+        # tinh tong chu so
+        tong = 0
+        while res != 0:
+            tong += (res % 10)
+            res//=10
+        
+        if(isPrime(tong) == True): print("YES")
+        else : print("NO")
+        
